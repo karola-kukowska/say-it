@@ -43,3 +43,18 @@ Favicon: [Images database at Icons8](https://icons8.com)
 Logo: [Logo generator at Logo.com](https://logo.com)
 
 Animal images: [SVG repo](https://www.svgrepo.com)
+
+### Design questions and choices
+
+#### How to create a colors reference
+first: accept colors that have equivalent names in html named colors
+second: create colors object with color names as keys and hex color numbers as values. gives more do flexibility
+
+#### How to change colors of the image
+first iteration img tag, downside filters 
+second iteration, svg as background mask, allows to change color thru backgroundColor 
+
+#### Recognize mobile devices
+why: speach recognition should not be in continuous mode
+tap to speak on mobile devices
+
