@@ -44,6 +44,8 @@ Logo: [Logo generator at Logo.com](https://logo.com)
 
 Animal images: [SVG repo](https://www.svgrepo.com)
 
+Font Awesome: [Button icons at Font Awesome](https://fontawesome.com)
+
 ### Design questions and choices
 
 #### How to create a colors reference

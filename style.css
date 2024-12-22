@@ -1,18 +1,26 @@
-@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Gluten:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 
 * {
-	--color-primary: #2e294e;
+	/* --color-primary: #2e294e;
 	--color-secondary: #c5d86d;
 	--color-accent-1: #d7263d;
 	--color-accent-2: #f46036;
-	--color-accent-3: #1b998b;
+	--color-accent-3: #1b998b; */
+	/* page color #E3DFDA */
+	--color-primary: #2f4858;
+	--color-secondary: #7fd1ae;
+	--color-accent-1: #be8700;
+	--color-accent-2: #ff8a5f;
+	--color-accent-3: #007663;
+	--color-bg: #e3dfda93;
 }
 
 body {
-	font-family: "Poppins", sans-serif;
+	font-family: "Open Sans", sans-serif;
 	font-size: 18px;
 	margin: 0;
 	padding: 0;
+	background-color: var(--color-bg);
 }
 
 .dots {
@@ -40,10 +48,13 @@ body {
 	margin: 0;
 	padding: 0;
 	width: 200px;
-	background-color: #c5d86d;
+	background-color: var(--color-secondary);
 	position: fixed;
-	height: 100%;
+	height: 100vh;
 	overflow: auto;
+	font-family: "Gluten";
+	/* font-family: "Funnel Display"; */
+	font-weight: 600;
 }
 
 /* Sidebar links */
@@ -62,19 +73,26 @@ body {
 
 .sidebar img {
 	max-height: 70px;
+	margin-left: 12px;
 }
 
 /* Links on mouse-over */
 .sidebar a:hover:not(.active) {
 	background-color: #2e294e;
-	color: #c5d86d;
+	color: var(--color-secondary);
+}
+
+.sidebar i {
+	margin-left: 12px;
+	margin-right: 24px;
 }
 
 /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
-div.content {
+.content {
 	margin-left: 200px;
 	padding: 1px 16px;
-	height: 1000px;
+	/* min-height: 100vh;  */
+	height: 99vh;
 }
 
 /* On screens that are less than 700px wide, make the sidebar into a topbar */
@@ -169,7 +187,7 @@ div.content {
 	font-weight: 900;
 }
 
-.button {
+/* .button {
 	background-color: var(--color-accent-2);
 	border-radius: 8px;
 	border: none;
@@ -180,9 +198,80 @@ div.content {
 	display: inline-block;
 	font-size: 16px;
 	margin: 4px 2px;
-}
+} */
 
 .hidden {
 	display: none;
 	transition: display 0.5s ease-in-out;
+}
+
+/* Loader animation by: https://css-loaders.com/ */
+
+/* .loader {
+  width: 60px;
+  aspect-ratio: 2;
+  --_g: no-repeat radial-gradient(circle closest-side,var(--color-accent-1) 90%,#0000);
+  
+  background: 
+    var(--_g) 0%   50%,
+    var(--_g) 50%  50%,
+    var(--_g) 100% 50%;
+  background-size: calc(100%/3) 50%;
+  animation: l3 1s infinite linear;
+}
+@keyframes l3 {
+    20%{background-position:0%   0%, 50%  50%,100%  50%}
+    40%{background-position:0% 100%, 50%   0%,100%  50%}
+    60%{background-position:0%  50%, 50% 100%,100%   0%}
+    80%{background-position:0%  50%, 50%  50%,100% 100%}
+} */
+
+.loader {
+	color: #000;
+	width: 4px;
+	aspect-ratio: 1;
+	border-radius: 50%;
+	box-shadow: 19px 0 0 7px, 38px 0 0 3px, 57px 0 0 0;
+	transform: translateX(-38px);
+	animation: l21 0.5s infinite alternate linear;
+}
+
+@keyframes l21 {
+	50% {
+		box-shadow: 19px 0 0 3px, 38px 0 0 7px, 57px 0 0 3px;
+	}
+	100% {
+		box-shadow: 19px 0 0 0, 38px 0 0 3px, 57px 0 0 7px;
+	}
+}
+
+.notepad {
+	background-image: url("./images/Page.png");
+	background-position: center;
+	background-repeat: no-repeat; /* Do not repeat the image */
+	background-size: 90%; /* Resize the background image to cover the entire container */
+	margin: 0 auto;
+	padding-top: 2rem;
+	height: 100%;
+	font-family: "Gluten";
+	text-align: center;
+	border: 1px solid red;
+}
+
+.picture {
+	/* background-image: url("./images/Chameleon.png"); */
+	background-image: url("./images/Chameleon_lines.png");
+	background-position: center;
+	background-repeat: no-repeat; /* Do not repeat the image */
+	background-size: contain; /* Resize the background image to cover the entire container */
+	margin: 0 auto;
+	height: 60%;
+}
+
+.instruction {
+	font-size: 32px;
+}
+
+.answer {
+	font-size: 44px;
 }
