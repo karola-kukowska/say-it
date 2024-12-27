@@ -1,3 +1,5 @@
+import data from "./data.json" with { type: "json" };
+
 const SpeechRecognition =
 	window.SpeechRecognition || window.webkitSpeechRecognition;
 
@@ -7,65 +9,56 @@ rec.lang = "en-US";
 rec.continuous = false;
 
 rec.onresult = function (e) {
-	const acceptedColors = [
-		"red",
-		"blue",
-		"green",
-		"yellow",
-		"pink",
-		"brown",
-		"purple",
-		"orange",
-		"black",
-		"white",
-		"gray",
-		"violet",
-	];
 
-	for (let i = e.resultIndex; i < e.results.length; i++) {
-		const script = e.results[i][0].transcript.toLowerCase().trim().split(" ");
-		const img = document.querySelector(".card-img");
-		const p = document.querySelector(".card-color--name");
-		const d = document.querySelector(".card-color");
-		const title = document.querySelector(".card-title");
-		console.log(script);
-		
-		for (const word of script) {
+	//Create an array of color names from data.json
+	const acceptedColors = data.colors.map(({name}) => name);
+	
+	//Create an array of recognized words
+	const script = e.results[0][0].transcript.toLowerCase().trim().split(" ")
+	console.log(script);
 
-			if (acceptedColors.includes(word)) {
-				img.style.backgroundColor = word;
-				p.textContent = word;
-				p.style.color = word;
-				d.classList.remove("hidden");
-				title.classList.add("hidden");
-				if (word == "white") {
-					document.querySelector(".card-img--box").style.backgroundColor =
-					"#DCF9F6";
-				} else {
-					document.querySelector(".card-img--box").style.backgroundColor =
-					"white";
-				}
-				break;
-			} else if (word == "reset") {
-				d.classList.add("hidden");
-				title.classList.remove("hidden");
-			}
-		}
+	//Check recognized words against accepted colors
+	for (const word of script) {
+	if (acceptedColors.includes(word)) {
+	//Print color name on screen
+	//Change the color of an animal
+	addFilter("pic", word);	
 	}
+}
 };
-
-const synth = window.SpeechSynthesis;
 
 function say(color) {
 	const utterThis = new SpeechSynthesisUtterance(color);
-	speechSynthesis.speak(utterThis);
+	window.speechSynthesis.speak(utterThis);
 }
 
-window.addEventListener("keydown", (e) => {
-	if (e.keyCode === 32) { 
-		rec.start();
-	}
-	setTimeout(()=> rec.stop(), 10000);
-})
+//Start voice recognition
+function record() {
+	//Trigger record start
+	rec.start();
 
-// window.addEventListener("keyup", () => rec.stop()               )
+	//add some indication if recording is active
+	
+	//End recording after 10s
+	setTimeout(() => {
+		rec.stop();
+		//remove above indication
+	}, 10000);
+}
+
+//Change color of selected picture
+function addFilter(elementId, color) {
+	const pic = document.getElementById(elementId);
+	const colorData = data.colors.find(({ name }) => name === color);
+	if (colorData && colorData.filter) {
+		 pic.style.filter = colorData.filter;
+	//	 console.log("Applying filter:", colorData.filter);
+	}
+}
+
+//Changing script type to "module" makes it necassary to add onclik functions from within the script
+window.onload = (e) => {
+document.getElementById("rec_btn").onclick = () => {record();}
+document.getElementById("repeat_btn").onclick = () => addFilter("brown");
+};
+

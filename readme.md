@@ -46,17 +46,28 @@ Animal images: [SVG repo](https://www.svgrepo.com)
 
 Font Awesome: [Button icons at Font Awesome](https://fontawesome.com)
 
+Images: Animal images and page backround courtesy by [Małgorzata Miri Sarnacka](https://www.facebook.com/margaritas.anteporcos)
+
 ### Design questions and choices
 
 #### How to create a colors reference
+
 first: accept colors that have equivalent names in html named colors
 second: create colors object with color names as keys and hex color numbers as values. gives more do flexibility
 
 #### How to change colors of the image
-first iteration img tag, downside filters 
-second iteration, svg as background mask, allows to change color thru backgroundColor 
+
+first iteration img tag, downside filters
+second iteration, svg as background mask, allows to change color thru backgroundColor
+[stack overflow](https://stackoverflow.com/questions/7415872/change-color-of-png-image-via-css/76648616#76648616)
+[filter calculator](https://isotropic.co/tool/hex-color-to-css-filter/)
 
 #### Recognize mobile devices
+
 why: speach recognition should not be in continuous mode
 tap to speak on mobile devices
 
+#### Import data from JSON
+
+Pros: one source of data, minimizes errors
+Challenge: Changing script type to "module" makes it necassary to add onclik functions from within the script rather than html

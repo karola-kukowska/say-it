@@ -1,0 +1,72 @@
+{
+	"colors": [
+		{
+			"name": "red",
+			"hex": "#ff6666",
+			"filter": "invert(60%) sepia(89%) saturate(2251%) hue-rotate(321deg) brightness(106%) contrast(101%)"
+		},
+
+		{
+			"name": "orange",
+			"hex": "#ffbd55",
+			"filter": "invert(93%) sepia(18%) saturate(5010%) hue-rotate(320deg) brightness(108%) contrast(101%)"
+		},
+		{
+			"name": "yellow",
+			"hex": "#ffff66",
+			"filter": "invert(99%) sepia(60%) saturate(1524%) hue-rotate(350deg) brightness(105%) contrast(105%)"
+		},
+		{
+			"name": "green",
+			"hex": "#9de24f",
+			"filter": "invert(81%) sepia(28%) saturate(866%) hue-rotate(37deg) brightness(96%) contrast(96%)"
+		},
+		{
+			"name": "blue",
+			"hex": "#87cefa",
+			"filter": "invert(87%) sepia(19%) saturate(6796%) hue-rotate(178deg) brightness(107%) contrast(96%)"
+		},
+		{
+			"name": "pink",
+			"hex": "#ffc0cb",
+			"filter": "invert(75%) sepia(36%) saturate(297%) hue-rotate(303deg) brightness(98%) contrast(115%)"
+		},
+		{
+			"name": "brown",
+			"hex": "#784f26",
+			"filter": "invert(26%) sepia(84%) saturate(415%) hue-rotate(349deg) brightness(97%) contrast(84%)"
+		},
+		{
+			"name": "purple",
+			"hex": "#993299",
+			"filter": "invert(26%) sepia(16%) saturate(7499%) hue-rotate(276deg) brightness(94%) contrast(89%)"
+		},
+		{
+			"name": "black",
+			"hex": "#000",
+			"filter": ""
+		},
+		{
+			"name": "white",
+			"hex": "#fff",
+			"filter": "invert(100%)"
+		},
+		{
+			"name": "gray",
+			"hex": "#999999",
+			"filter": "invert(61%) sepia(16%) saturate(0%) hue-rotate(254deg) brightness(97%) contrast(88%)"
+		},
+		{
+			"name": "violet",
+			"hex": "#a932db",
+			"filter": "invert(26%) sepia(37%) saturate(7220%) hue-rotate(273deg) brightness(92%) contrast(90%)"
+		}
+	],
+	"animals": [
+		{
+			"name": "chameleon",
+			"img": "./images/chameleon.png",
+			"img_nobg": "./images/chameleon_lines.png"
+		}
+	]
+}

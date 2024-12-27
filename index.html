@@ -7,7 +7,7 @@
 	<title>Say It!</title>
 	<!-- Favicon by <a target="_blank" href="https://icons8.com">Icons8</a> -->
 	<link type="image/png" sizes="16x16" rel="icon" href="img/icons8-color-16.png" />
-	<script src="script.js" defer></script>
+	<script src="script.js" type="module"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="style.css" />
 </head>
@@ -19,11 +19,6 @@
 		<a class="active" href="#home">
 			<img src="img/say-it-logo-transparent.webp" id="logo" />
 		</a>
-		<!-- <div class="logo-outer">
-			<i class="fa fa-regular fa-comments logo-ico"></i>
-			<p class="loco_inner">Say It!</p>
-		</div> -->
-
 		<a href="#news" class="button">
 			<i class="fa fa-solid fa-microphone"></i> Play</a>
 		<a href="#contact" class="button"><i class="fa fa-solid fa-puzzle-piece"></i> Test</a>
@@ -45,10 +40,13 @@
 				<button type="button" class="button">Repeat</button>
 			</div>
 		</div> -->
-		<div class="notepad">
+		<div class="conrtent notepad">
 			<div class="picture"></div>
+			<img class="pic" id="pic" src="./images/Chameleon_lines.png" alt="Chameleon" />
 			<p class="instruction">Press SPACE and say a Color</p>
 			<p class="answer">test</p>
+			<button type="button" class="button" id="rec_btn">Record</button>
+			<button type="button" class="button" id="repeat_btn">Say it Back</button>
 		</div>
 	</div>
 
