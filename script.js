@@ -9,7 +9,6 @@ rec.lang = "en-US";
 rec.continuous = false;
 
 rec.onresult = function (e) {
-
 	//Create an array of color names from data.json
 	const acceptedColors = data.colors.map(({name}) => name);
 	
@@ -17,10 +16,19 @@ rec.onresult = function (e) {
 	const script = e.results[0][0].transcript.toLowerCase().trim().split(" ")
 	console.log(script);
 
+	//Active elements
+	const prompt = document.getElementById("prompt");
+	const answer = document.getElementById("answer");
+
 	//Check recognized words against accepted colors
 	for (const word of script) {
 	if (acceptedColors.includes(word)) {
 	//Print color name on screen
+		answer.innerText = word;
+		const colorValue = data.colors.find(n => n.name === word).hex || "#fff";
+		console.log(colorValue);
+		answer.style.color = colorValue;
+		[prompt,answer].forEach(n => n.classList.toggle("hidden"));
 	//Change the color of an animal
 	addFilter("pic", word);	
 	}
