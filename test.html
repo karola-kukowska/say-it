@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Say It!</title>
+    <!-- Favicon by <a target="_blank" href="https://icons8.com">Icons8</a> -->
+    <link type="image/png" sizes="16x16" rel="icon" href="img/icons8-color-16.png" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" type="module"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/c84c920db6.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="bg-[var(--color-bg)] text-base">
+    <!-- Topbar -->
+    <nav class="w-full bg-[var(--color-accent-3)] text-white font-gluten font-semibold">
+        <div class="max-w-4xl mx-auto flex p-4 justify-between">
+            <!-- Logo -->
+            <a href="./index.html" class="ml-2 md:ml-0">
+                <img src="img/say-it-logo-transparent.webp" id="logo" class="h-16" alt="Say It Logo" />
+            </a>
+            <!-- Navigation Links -->
+            <div class="flex items-center max-w-2/3 sm:w-2/3 space-x-2 md:space-x-6">
+                <a href="./index.html"
+                    class="border-solid border-2 border-white shadow-sm flex justify-center p-2 hover:bg-[var(--color-secondary)] transition rounded md:w-full">
+                    <i class="fa fa-regular fa-comment mr-4"></i> Play
+                </a>
+                <a href="./test.html"
+                    class="border-solid border-2 border-white shadow-sm flex justify-center p-2 hover:bg-[var(--color-secondary)] transition rounded md:w-full">
+                    <i class="fa fa-solid fa-hand mr-4"></i> Test
+                </a>
+                <a href="./about.html"
+                    class="border-solid border-2 border-white shadow-sm flex justify-center p-2 hover:bg-[var(--color-secondary)] transition rounded md:w-full">
+                    <i class="fa fa-solid fa-lightbulb mr-4"></i> About
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <main class="bg-cover bg-top min-h-screen">
+        <div class="max-w-screen-xl mx-auto font-gluten text-center text-2xl">
+            <div class="pt-24 notepad min-h-screen">
+                <div class="mt-4 sm:pt-2 mx-4">
+
+                    <h1 class="semibold text-6xl mt-12 mb-8 shadow-outline text-[var(--color-secondary)]">Test
+                    </h1>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="sticky w-full bg-[var(--color-primary)] text-white text-center font-funnel p-4 mt-24">
+        <p>2024</p>
+        <p>&copy; Coded by Karola Kukowska</p>
+    </footer>
+
+</body>
+
+</html>
