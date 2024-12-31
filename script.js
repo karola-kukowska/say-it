@@ -24,11 +24,13 @@ rec.onresult = function (e) {
 	for (const word of script) {
 	if (acceptedColors.includes(word)) {
 	//Print color name on screen
+	if (!prompt.classList.contains("hidden")) {
+		prompt.classList.add("hidden");
+		answer.classList.remove("hidden");
+	}
 		answer.innerText = word;
 		const colorValue = data.colors.find(n => n.name === word).hex || "#fff";
-		console.log(colorValue);
 		answer.style.color = colorValue;
-		[prompt,answer].forEach(n => n.classList.toggle("hidden"));
 	//Change the color of an animal
 	addFilter("pic", word);	
 	}
@@ -46,12 +48,14 @@ function record() {
 	rec.start();
 
 	//add some indication if recording is active
-	
-	//End recording after 10s
+	const text = document.getElementById("rec_btn_text");
+	const spinner = document.getElementById("rec_btn_spinner");
+	[text,spinner].forEach(n => n.classList.toggle("hidden"));
+
+	//Remove indication of active sound record
 	setTimeout(() => {
-		rec.stop();
-		//remove above indication
-	}, 10000);
+		[text,spinner].forEach(n => n.classList.toggle("hidden"));
+	}, 4000);
 }
 
 //Change color of selected picture
@@ -60,13 +64,12 @@ function addFilter(elementId, color) {
 	const colorData = data.colors.find(({ name }) => name === color);
 	if (colorData && colorData.filter) {
 		 pic.style.filter = colorData.filter;
-	//	 console.log("Applying filter:", colorData.filter);
 	}
 }
 
 //Changing script type to "module" makes it necassary to add onclik functions from within the script
 window.onload = (e) => {
 document.getElementById("rec_btn").onclick = () => {record();}
-document.getElementById("repeat_btn").onclick = () => addFilter("brown");
+document.getElementById("repeat_btn").onclick = () => {say(document.getElementById("answer").innerText)};
 };
 
