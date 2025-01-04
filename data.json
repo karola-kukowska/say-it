@@ -67,6 +67,41 @@
 			"name": "chameleon",
 			"img": "./images/chameleon.png",
 			"img_nobg": "./images/chameleon_lines.png"
+		},
+		{
+			"name": "bird",
+			"img": "./images/bird.png",
+			"img_nobg": "./images/bird_lines.png"
+		},
+		{
+			"name": "cat",
+			"img": "./images/cat.png",
+			"img_nobg": "./images/cat_lines.png"
+		},
+		{
+			"name": "dog",
+			"img": "./images/dog.png",
+			"img_nobg": "./images/dog_lines.png"
+		},
+		{
+			"name": "fish",
+			"img": "./images/fish.png",
+			"img_nobg": "./images/fish_lines.png"
+		},
+		{
+			"name": "frog",
+			"img": "./images/frog.png",
+			"img_nobg": "./images/frog_lines.png"
+		},
+		{
+			"name": "mouse",
+			"img": "./images/mouse.png",
+			"img_nobg": "./images/mouse_lines.png"
+		},
+		{
+			"name": "snake",
+			"img": "./images/snake.png",
+			"img_nobg": "./images/snake_lines.png"
 		}
 	]
 }
