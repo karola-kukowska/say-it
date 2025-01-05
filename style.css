@@ -1,55 +1,51 @@
 @import url("https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Gluten:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
-
 :root {
-	--color-primary: #2f4858;
-	--color-secondary: #7fd1ae;
-	--color-accent-1: #be8700;
-	--color-accent-2: #ff8a5f;
-	--color-accent-3: #007663;
-	--color-bg: #e3dfda93;
+    --color-primary: #2f4858;
+    --color-secondary: #ABD8C4;
+    --color-accent-1: #FF5666;
+    --color-accent-2: #ff8a5f;
+    --color-accent-3: #49A078;
+    --color-accent-4: #A379C9;
+    --color-footer: #292F36;
+    --color-bg: #7AA0B8;
 }
 
 body {
-	font-family: "Open Sans", sans-serif;
+    font-family: "Open Sans", sans-serif;
 }
 
 .font-gluten {
-	font-family: "Gluten", sans-serif;
+    font-family: "Gluten", sans-serif;
 }
 
 .font-funnel {
-	font-family: "Funnel Display", sans-serif;
+    font-family: "Funnel Display", sans-serif;
 }
 
 .notepad {
-	background: url("./images/Page1.png") no-repeat top;
-	background-size: cover;
-	/* overflow: visible; */
+    background: url("./images/Page1.png") no-repeat top;
+    background-size: cover;
 }
 
 .shadow-outline {
-	text-shadow: 3px 3px 2px #0000003d, -3px 3px 2px #0000003d,
-		-3px -3px 0 #0000003d, 3px -3px 0 #0000003d;
+    text-shadow: 3px 3px 2px #0000003d, -3px 3px 2px #0000003d, -3px -3px 0 #0000003d, 3px -3px 0 #0000003d;
 }
 
+@keyframes frameChange {
+    0% {
+        background-image: url("./images/Frame-1.png");
+    }
+    50% {
+        background-image: url("./images/Frame-2.png");
+    }
+    100% {
+        background-image: url("./images/Frame-3.png");
+    }
+}
 
-        @keyframes frameChange {
-            0% {
-                background-image: url("./images/Frame-1.png");
-            }
-
-            50% {
-                background-image: url("./images/Frame-2.png");
-            }
-
-            100% {
-                background-image: url("./images/Frame-3.png");
-            }
-        }
-
-        .frame-animation {
-            background-position: center;
-            background-size: contain;
-            background-repeat: no-repeat;
-            animation: frameChange 1.6s step-start infinite;
-        }
+.frame-animation {
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: frameChange 1.6s step-start infinite;
+}
