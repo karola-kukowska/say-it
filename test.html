@@ -7,9 +7,9 @@
     <title>Say It!</title>
     <!-- Favicon by <a target="_blank" href="https://icons8.com">Icons8</a> -->
     <link type="image/png" sizes="16x16" rel="icon" href="./icons/icons8-color-16.png" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.min.css" />
     <script src="script.js" type="module"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
     <script src="https://kit.fontawesome.com/c84c920db6.js" crossorigin="anonymous"></script>
 </head>
 
@@ -23,13 +23,16 @@
             </a>
             <!-- Navigation Links -->
             <div class="flex items-center max-w-2/3 sm:w-2/3 space-x-2 md:space-x-6">
-                <a href="./index.html" class="border-solid border-2 border-white shadow-sm flex justify-center p-2 bg-[var(--color-accent-2)] hover:brightness-150 transition rounded md:w-full">
+                <a href="./index.html"
+                    class="border-solid border-2 border-white shadow-sm flex justify-center p-2 bg-[var(--color-accent-2)] hover:brightness-150 transition rounded md:w-full">
                     <i class="fa fa-regular fa-comment mr-4"></i> Play
                 </a>
-                <a href="./test.html" class="border-solid border-2 border-white shadow-sm flex justify-center p-2 bg-[var(--color-accent-1)] hover:brightness-150 transition rounded md:w-full">
+                <a href="./test.html"
+                    class="border-solid border-2 border-white shadow-sm flex justify-center p-2 bg-[var(--color-accent-1)] hover:brightness-150 transition rounded md:w-full">
                     <i class="fa fa-solid fa-hand mr-4"></i> Test
                 </a>
-                <a href="./about.html" class="border-solid border-2 border-white shadow-sm flex justify-center p-2 bg-[var(--color-accent-3)] hover:brightness-150 transition rounded md:w-full">
+                <a href="./about.html"
+                    class="border-solid border-2 border-white shadow-sm flex justify-center p-2 bg-[var(--color-accent-3)] hover:brightness-150 transition rounded md:w-full">
                     <i class="fa fa-solid fa-lightbulb mr-4"></i> About
                 </a>
             </div>
@@ -42,7 +45,8 @@
             <div class="pt-24 notepad min-h-screen transition-transform ease-in-out delay-150">
                 <div class="mt-4 sm:pt-2 mx-4">
 
-                    <button id="start_btn" class="2xl:mt-80 mt-20 px-6 py-2 h-20 w-56 bg-[var(--color-accent-1)] text-white text-3xl rounded-xl hover:brightness-125 transition space-x-2">
+                    <button id="start_btn"
+                        class="2xl:mt-80 mt-20 px-6 py-2 h-20 w-56 bg-[var(--color-accent-1)] text-white text-3xl rounded-xl hover:brightness-125 transition space-x-2">
                         <span>Start!</span>
                     </button>
                     <div id="game" class="hidden my-12 pb-20">
@@ -50,15 +54,18 @@
                             <p id="term" class="text-6xl uppercase h-24 brightness-90 shadow-outline">
                                 Color</p>
                             <div class="flex justify-around space-x-12 ">
-                                <button id="repeat_btn" class="px-6 py-2 h-14 w-56 bg-[var(--color-accent-4)] text-white text-xl rounded-xl hover:brightness-125 transition space-x-2">
+                                <button id="repeat_btn"
+                                    class="px-6 py-2 h-14 w-56 bg-[var(--color-accent-4)] text-white text-xl rounded-xl hover:brightness-125 transition space-x-2">
                                     <i class="fa fa-solid fa-rotate-right"></i> <span>Say it Back</span>
                                 </button>
-                                <button id="new_btn" disabled class="px-6 py-2 h-14 w-56 bg-gray-400 enabled:bg-[var(--color-accent-1)] text-white text-xl rounded-xl enabled:hover:brightness-125 enabled:transition space-x-2">
+                                <button id="new_btn" disabled
+                                    class="px-6 py-2 h-14 w-56 bg-gray-400 enabled:bg-[var(--color-accent-1)] text-white text-xl rounded-xl enabled:hover:brightness-125 enabled:transition space-x-2">
                                     <i class="fa fa-regular fa-star"></i> <span>New Game</span>
                                 </button>
                             </div>
                         </div>
-                        <div id="game-board" class="mx-auto px-12 flex flex-wrap w-full place-content-center basis-2/4 gap-4 mt-12 order-2 border-solid border-green-400">
+                        <div id="game-board"
+                            class="mx-auto px-12 flex flex-wrap w-full place-content-center basis-2/4 gap-4 mt-12 order-2 border-solid border-green-400">
 
                             <!-- <div class="min-w-1/3 max-w-96 border-2 border-solid border-green-400 ">
                                 <img id="pic" src="./images/Chameleon_lines.png" alt="Chameleon"
