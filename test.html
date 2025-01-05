@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Say It!</title>
     <!-- Favicon by <a target="_blank" href="https://icons8.com">Icons8</a> -->
-    <link type="image/png" sizes="16x16" rel="icon" href="img/icons8-color-16.png" />
+    <link type="image/png" sizes="16x16" rel="icon" href="./icons/icons8-color-16.png" />
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" type="module"></script>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -19,7 +19,7 @@
         <div class="max-w-4xl mx-auto flex p-4 justify-between">
             <!-- Logo -->
             <a href="./index.html" class="ml-2 md:ml-0">
-                <img src="img/say-it-logo-transparent.webp" id="logo" class="h-16" alt="Say It Logo" />
+                <img src="./icons/say-it-logo-transparent.webp" id="logo" class="h-16" alt="Say It Logo" />
             </a>
             <!-- Navigation Links -->
             <div class="flex items-center max-w-2/3 sm:w-2/3 space-x-2 md:space-x-6">
@@ -40,13 +40,13 @@
     </nav>
 
     <!-- Content -->
-    <main class="bg-cover bg-top">
+    <main class="bg-cover bg-top mt-4">
         <div class="max-w-screen-xl mx-auto font-gluten text-center text-2xl">
             <div class="pt-24 notepad min-h-screen transition-transform ease-in-out delay-150">
                 <div class="mt-4 sm:pt-2 mx-4">
 
                     <button id="start_btn"
-                        class="mt-20 px-6 py-2 h-20 w-56 bg-[var(--color-accent-2)] text-white text-3xl rounded-xl hover:brightness-150 transition space-x-2">
+                        class="xl:mt-80 mt-20 px-6 py-2 h-20 w-56 bg-[var(--color-accent-2)] text-white text-3xl rounded-xl hover:brightness-150 transition space-x-2">
                         <span>Start!</span>
                     </button>
                     <div id="game" class="hidden my-12 pb-20">

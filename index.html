@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Say It!</title>
 	<!-- Favicon by <a target="_blank" href="https://icons8.com">Icons8</a> -->
-	<link type="image/png" sizes="16x16" rel="icon" href="img/icons8-color-16.png" />
+	<link type="image/png" sizes="16x16" rel="icon" href="./icons/icons8-color-16.png" />
 	<link rel="stylesheet" href="style.css" />
 	<script src="script.js" type="module"></script>
 	<script src="https://cdn.tailwindcss.com"></script>
@@ -19,7 +19,7 @@
 		<div class="max-w-4xl mx-auto flex p-4 justify-between">
 			<!-- Logo -->
 			<a href="./index.html" class="ml-2 md:ml-0">
-				<img src="img/say-it-logo-transparent.webp" id="logo" class="h-16" alt="Say It Logo" />
+				<img src="./icons/say-it-logo-transparent.webp" id="logo" class="h-16" alt="Say It Logo" />
 			</a>
 			<!-- Navigation Links -->
 			<div class="flex items-center max-w-2/3 sm:w-2/3 space-x-2 md:space-x-6">
@@ -40,15 +40,17 @@
 	</nav>
 
 	<!-- Content -->
-	<main class="bg-cover bg-top min-h-screen">
+	<main class="bg-cover bg-top min-h-screen mt-4">
 		<div class="max-w-screen-xl mx-auto font-gluten text-center text-2xl">
 			<!-- Drawing area -->
-			<div class="pt-24 notepad min-h-screen">
-				<div class="mt-4 sm:pt-2 mx-4">
+			<div class="pt-24 notepad">
+				<div class="mt-4 xl:mt-12 sm:pt-2 mx-4">
 					<img id="pic" src="./images/Chameleon_lines.png" alt="Chameleon"
 						class="mx-auto h-1/2 max-w-3/4 md:max-h-96 brightness-90" />
 					<p id="prompt" class="text-2xl mt-4 mb-12 h-24">Press RECORD and say a Color</p>
-					<p id="answer" class="hidden text-6xl mt-4 mb-12 uppercase h-24 brightness-90 shadow-outline"></p>
+					<p id="answer"
+						class="hidden text-6xl mt-4 mb-12 uppercase h-24 brightness-90 shadow-outline tracking-wider">
+					</p>
 				</div>
 			</div>
 
@@ -80,7 +82,7 @@
 
 	<!-- Footer -->
 	<footer class="sticky w-full bg-[var(--color-primary)] text-white text-center font-funnel p-4 mt-24">
-		<p>2024</p>
+		<p>2025</p>
 		<p>&copy; Coded by Karola Kukowska</p>
 	</footer>
 
