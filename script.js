@@ -67,11 +67,12 @@ function addFilter(elementId, color) {
 }
 
 //Changing script type to "module" makes it necassary to add onclik functions from within the script
-window.onload = (e) => {
-	if (window.location.pathname === "/index.html") {
+window.onload = () => {
+	const path = window.location.pathname.replace(/\/$/, "");
+	if (path === "/index.html" || path === "") {
 		document.getElementById("rec_btn").onclick = () => { record(); }
 		document.getElementById("repeat_btn").onclick = () => { say(document.getElementById("answer").innerText) };
-	} else if (window.location.pathname === "/test.html") {
+	} else if (path === "/test.html" || path === "/test") {
 		document.getElementById("start_btn").onclick = () => { startTest() };
 	}
 };
