@@ -24,10 +24,32 @@ body {
 .notepad {
 	background: url("./images/Page1.png") no-repeat top;
 	background-size: cover;
-	overflow: visible;
+	/* overflow: visible; */
 }
 
 .shadow-outline {
 	text-shadow: 3px 3px 2px #0000003d, -3px 3px 2px #0000003d,
 		-3px -3px 0 #0000003d, 3px -3px 0 #0000003d;
 }
+
+
+        @keyframes frameChange {
+            0% {
+                background-image: url("./images/Frame-1.png");
+            }
+
+            50% {
+                background-image: url("./images/Frame-2.png");
+            }
+
+            100% {
+                background-image: url("./images/Frame-3.png");
+            }
+        }
+
+        .frame-animation {
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            animation: frameChange 1.6s step-start infinite;
+        }

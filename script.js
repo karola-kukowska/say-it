@@ -14,7 +14,6 @@ rec.onresult = function (e) {
 
 	//Create an array of recognized words
 	const script = e.results[0][0].transcript.toLowerCase().trim().split(" ")
-	console.log(script);
 
 	//Active elements
 	const prompt = document.getElementById("prompt");
@@ -86,33 +85,59 @@ function startTest() {
 	document.getElementById("game").classList.remove("hidden");
 
 	startGame();
-	//??add onclick functions to btns?
+	//add onclick function to new game btn
+	document.getElementById("new_btn").onclick = () => { startGame() };
+	document.getElementById("new_btn").disabled = true;
 }
 
 function startGame() {
-	//draw 4 animals (max 2 same) and 4 colors (all different)
-	//display search term
-	//add say it back speech
+	//disable new game button
+	document.getElementById("new_btn").disabled = true;
 
-	//display four animals
-	/* game Data blueprint:
-	[{
-		animal: "dog",
-		color: "blue",
-		url: "",
-		filter: "",
-		order: ""
-	}]
-	*/
+	//create new game set
 	const gameData = createGameData();
-	console.log(gameData);
 
-	//check for click on correct animal
-	//hoover effect bright
-	//fanfare
-	//??fade out for incorrect
+	//display search term
+	const searchTerm = `${gameData[0].color} ${gameData[0].animal}`;
+	document.getElementById("term").innerText = searchTerm;
 
-	//allow new game if guessed correctly - remove disabled
+	//say search term and add repeat fn to button
+	say(searchTerm);
+	document.getElementById("repeat_btn").onclick = () => { say(searchTerm) };
+
+	//draw animals from game set
+	const gameBoard = document.getElementById("game-board");
+	gameBoard.replaceChildren();
+	gameData.forEach(entry => {
+		const name = `${entry.color} ${entry.animal}`;
+		const node = document.createElement("div");
+		node.classList.add("min-w-1/3", "max-w-96", `order-${entry.order}`);
+		node.onclick = name === searchTerm ? (e) => showCorrect(e) : () => showIncorrect();
+		const img = document.createElement("img");
+		img.classList.add("object-contain", "rounded-full", "hover:bg-sky-700/[.4]");
+		img.setAttribute("src", entry.url);
+		img.setAttribute("alt", name);
+		img.setAttribute("id", name);
+		node.appendChild(img);
+		gameBoard.appendChild(node);
+		addFilter(name, entry.color);
+
+	})
+
+	function showIncorrect() {
+		const audioElement = new Audio("./sounds/sad-synth.wav");
+		audioElement.play();
+	};
+
+	function showCorrect(e) {
+		//animated frame
+		e.target.parentElement.classList.add("frame-animation", "transition");
+		//fanfare
+		const audioElement = new Audio("./sounds/happy.wav");
+		audioElement.play();
+		//allow new game if guessed correctly - remove disabled
+		document.getElementById("new_btn").disabled = false;
+	}
 }
 
 function createGameData() {
@@ -137,20 +162,31 @@ function createGameData() {
 	}
 
 	let gameData = [];
-	const colors = generateArray(4, selectColor);
+	/* 
+	Rules for generating a game set:
+		- no animals repeat
+		- there can be *one* repetition of color, on a diffrenet animal
+		- first object is the search term, but it won't necessarily be displayed first, hence order value
+	Blueprint:
+	[{
+		animal: "dog",
+		color: "blue",
+		url: "",
+		order: ""
+	}]
+	*/
 	const animals = generateArray(4, selectAnimal);
+	const colors = generateArray(3, selectColor);
+	colors.push(selectColor());
 	const orderArr = generateArray(4, () => { return Math.floor(Math.random() * 4 + 1) })
 	for (let i = 0; i < colors.length; i++) {
 		let color = colors[i];
 		let animal = animals[i];
 		let order = orderArr[i]
 		let url = data.animals.find(n => n.name === animal).img_nobg;
-		let filter = data.colors.find(n => n.name === color).filter;
-		gameData.push({ color, animal, url, filter, order })
+		gameData.push({ color, animal, url, order })
 	}
 	return gameData;
 };
 
 
-
-startGame();
