@@ -38,6 +38,7 @@ rec.onresult = function (e) {
 
 function say(color) {
 	const utterThis = new SpeechSynthesisUtterance(color);
+	utterThis.lang = "en-US";
 	window.speechSynthesis.speak(utterThis);
 }
 
@@ -74,6 +75,8 @@ window.onload = () => {
 		document.getElementById("repeat_btn").onclick = () => { say(document.getElementById("answer").innerText) };
 	} else if (path === "/test.html" || path === "/test") {
 		document.getElementById("start_btn").onclick = () => { startTest() };
+		//add onclick function to new game btn
+		document.getElementById("new_btn").onclick = () => { startGame() };
 	}
 };
 
@@ -86,8 +89,6 @@ function startTest() {
 	document.getElementById("game").classList.remove("hidden");
 
 	startGame();
-	//add onclick function to new game btn
-	document.getElementById("new_btn").onclick = () => { startGame() };
 	document.getElementById("new_btn").disabled = true;
 }
 
@@ -163,19 +164,6 @@ function createGameData() {
 	}
 
 	let gameData = [];
-	/* 
-	Rules for generating a game set:
-		- no animals repeat
-		- there can be *one* repetition of color, on a diffrenet animal
-		- first object is the search term, but it won't necessarily be displayed first, hence order value
-	Blueprint:
-	[{
-		animal: "dog",
-		color: "blue",
-		url: "",
-		order: ""
-	}]
-	*/
 	const animals = generateArray(4, selectAnimal);
 	const colors = generateArray(3, selectColor);
 	colors.push(selectColor());
